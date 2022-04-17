@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestTrailDivision(t *testing.T) {
+func TestPrimeFactor(t *testing.T) {
 	tests := []struct {
 		count int
 		want  []int
@@ -19,10 +19,10 @@ func TestTrailDivision(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/count/TrialDivision(%d)", test.count)
+		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/count/PrimeFactor(%d)", test.count)
 
 		t.Run(testname, func(t *testing.T) {
-			got := TrailDivision(test.count)
+			got := PrimeFactor(test.count)
 			if !reflect.DeepEqual(got, test.want) {
 				t.Errorf("got %v, want %v", got, test.want)
 			}
