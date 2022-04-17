@@ -8,25 +8,26 @@ func Seo(end int) (primes []int) {
 		return []int{}
 	}
 
-	sieve := make([]bool, end+1)
-	count := 0
+	sieve := make([]bool, end+1)          // sieve slice
+	primes = make([]int, 0)               // output slice with primes
+	limit := int(math.Sqrt(float64(end))) // last prime factor to sieve
 
-	for i := 2; i <= int(math.Sqrt(float64(end))); i++ {
+	for i := 2; i <= limit; i++ {
+		// checking if element in sieve is false and hence prime
 		if !sieve[i] {
-			count++
-		}
-		for j := 2 * i; j <= end; j += i {
-			sieve[j] = true
+			primes = append(primes, i)
+			for j := 2 * i; j <= end; j += i {
+				sieve[j] = true
+			}
 		}
 	}
 
-	primes = make([]int, 0)
-	for i, v := range sieve {
-		if !v {
+	// add the remaining non multiples to primes slice
+	for i := limit; i <= end; i++ {
+		if !sieve[i] {
 			primes = append(primes, i)
 		}
 	}
-	primes = primes[2:]
 
 	return primes
 }
