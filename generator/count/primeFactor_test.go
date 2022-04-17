@@ -22,7 +22,7 @@ func TestPrimeFactor(t *testing.T) {
 		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/count/PrimeFactor(%d)", test.count)
 
 		t.Run(testname, func(t *testing.T) {
-			got := TrailDivision(test.count)
+			got := PrimeFactor(test.count)
 			if !reflect.DeepEqual(got, test.want) {
 				t.Errorf("got %v, want %v", got, test.want)
 			}

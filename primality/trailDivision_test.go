@@ -20,7 +20,7 @@ func TestTrailDivision(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/primality/TrailDivision(%d)", test.n)
+		testname := fmt.Sprintf("github.com/rufusclark/prime/primality/TrialDivision(%d)", test.n)
 
 		t.Run(testname, func(t *testing.T) {
 			got := TrailDivision(test.n)
