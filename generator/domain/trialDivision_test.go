@@ -6,7 +6,28 @@ import (
 	"testing"
 )
 
-func TestTrailDivision(t *testing.T) {
+func BenchmarkTrialDivision(b *testing.B) {
+	inputs := []struct {
+		a, b int
+	}{
+		{0, 10},
+		{0, 100},
+		{0, 1000},
+		{9000, 10000},
+	}
+
+	for _, input := range inputs {
+		benchname := fmt.Sprintf("TrialDivision(%d, %d)", input.a, input.b)
+
+		b.Run(benchname, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				TrialDivision(input.a, input.b)
+			}
+		})
+	}
+}
+
+func TestTrialDivision(t *testing.T) {
 	tests := []struct {
 		start, end int
 		want       []int
@@ -23,7 +44,7 @@ func TestTrailDivision(t *testing.T) {
 		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/domain/TrialDivision(%d, %d)", test.start, test.end)
 
 		t.Run(testname, func(t *testing.T) {
-			got := TrailDivision(test.start, test.end)
+			got := TrialDivision(test.start, test.end)
 			if !reflect.DeepEqual(got, test.want) {
 				t.Errorf("got %v, want %v", got, test.want)
 			}
