@@ -23,7 +23,7 @@ func Seo(end int) (primes []int) {
 	}
 
 	// add the remaining non multiples to primes slice
-	for i := limit; i <= end; i++ {
+	for i := limit + 1; i <= end; i++ {
 		if !sieve[i] {
 			primes = append(primes, i)
 		}

@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestTrailDivision(t *testing.T) {
+func TestTrialDivision(t *testing.T) {
 	tests := []struct {
 		n    int
 		want bool
@@ -23,7 +23,7 @@ func TestTrailDivision(t *testing.T) {
 		testname := fmt.Sprintf("github.com/rufusclark/prime/primality/TrialDivision(%d)", test.n)
 
 		t.Run(testname, func(t *testing.T) {
-			got := TrailDivision(test.n)
+			got := TrialDivision(test.n)
 			if got != test.want {
 				t.Errorf("got %v, want %v", got, test.want)
 			}

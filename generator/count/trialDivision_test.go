@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestTrailDivision(t *testing.T) {
+func TestTrialDivision(t *testing.T) {
 	tests := []struct {
 		count int
 		want  []int
@@ -22,7 +22,7 @@ func TestTrailDivision(t *testing.T) {
 		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/count/TrialDivision(%d)", test.count)
 
 		t.Run(testname, func(t *testing.T) {
-			got := TrailDivision(test.count)
+			got := TrialDivision(test.count)
 			if !reflect.DeepEqual(got, test.want) {
 				t.Errorf("got %v, want %v", got, test.want)
 			}

@@ -1,7 +1,7 @@
 package primality
 
 // TrialDivision checks whether or not something is prime by using checking all posible factors
-func TrailDivision(n int) bool {
+func TrialDivision(n int) bool {
 	if n < 2 {
 		return false
 	}
