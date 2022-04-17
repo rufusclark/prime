@@ -6,6 +6,27 @@ import (
 	"testing"
 )
 
+func BenchmarkTrialDivision(b *testing.B) {
+	inputs := []struct {
+		a, b int
+	}{
+		{0, 10},
+		{0, 100},
+		{0, 1000},
+		{9000, 10000},
+	}
+
+	for _, input := range inputs {
+		benchname := fmt.Sprintf("TrialDivision(%d, %d)", input.a, input.b)
+
+		b.Run(benchname, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				TrialDivision(input.a, input.b)
+			}
+		})
+	}
+}
+
 func TestTrialDivision(t *testing.T) {
 	tests := []struct {
 		start, end int

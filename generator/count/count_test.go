@@ -12,7 +12,7 @@ import (
 func TestFuzzCompareCount(t *testing.T) {
 	rand.Seed(time.Now().Unix())
 	for i := 0; i < 10; i++ {
-		n := rand.Intn(10000)
+		n := rand.Intn(1000)
 		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/count/ CompareCount PrimeFactor(%d)==TrialDivision(%d)", n, n)
 
 		t.Run(testname, func(t *testing.T) {

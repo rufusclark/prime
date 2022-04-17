@@ -6,6 +6,20 @@ import (
 	"testing"
 )
 
+func BenchmarkPrimeFactor(b *testing.B) {
+	inputs := []int{10, 100, 1000, 10000}
+
+	for _, input := range inputs {
+		benchname := fmt.Sprintf("PrimeFactor(%d)", input)
+
+		b.Run(benchname, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				PrimeFactor(input)
+			}
+		})
+	}
+}
+
 func TestPrimeFactor(t *testing.T) {
 	tests := []struct {
 		count int

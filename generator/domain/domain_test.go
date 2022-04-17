@@ -12,7 +12,7 @@ import (
 func TestFuzzCompareDomain(t *testing.T) {
 	rand.Seed(time.Now().Unix())
 	for i := 0; i < 10; i++ {
-		n := rand.Intn(100000)
+		n := rand.Intn(10000)
 		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/domain/ CompareCount PrimeFactor(%d)==TrialDivision(%d)==Seo(%d)", n, n, n)
 
 		t.Run(testname, func(t *testing.T) {

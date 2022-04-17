@@ -6,6 +6,20 @@ import (
 	"testing"
 )
 
+func BenchmarkSeo(b *testing.B) {
+	inputs := []int{10, 100, 1000, 10000}
+
+	for _, input := range inputs {
+		benchname := fmt.Sprintf("Seo(%d)", input)
+
+		b.Run(benchname, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				Seo(input)
+			}
+		})
+	}
+}
+
 func TestSeo(t *testing.T) {
 	tests := []struct {
 		end  int
