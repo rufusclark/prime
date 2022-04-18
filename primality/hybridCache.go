@@ -35,6 +35,7 @@ func HybridCache(n int) bool {
 		if binarySearch(n) {
 			return true
 		}
+		return false
 	}
 
 	// check all posible prime factors
