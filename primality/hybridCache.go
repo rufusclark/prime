@@ -32,10 +32,7 @@ func HybridCache(n int) bool {
 	// check if n is in cache
 	max := cache[len(cache)-1]
 	if n < max {
-		if binarySearch(n) {
-			return true
-		}
-		return false
+		return binarySearch(n)
 	}
 
 	// check all posible prime factors
