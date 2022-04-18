@@ -1,8 +1,6 @@
 package count
 
-import (
-	"github.com/rufusclark/prime/primality"
-)
+import "github.com/rufusclark/prime/primality"
 
 // TrialDivision is a function that calculates a given number of prime number from 0 and returns them in a slice
 func TrialDivision(count int) (primes []int) {
