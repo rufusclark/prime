@@ -24,8 +24,3 @@ func TestReadWrite(t *testing.T) {
 		})
 	}
 }
-
-// benchmark
-// 		read
-// 		write
-// 		generate (no read/write/encode)
