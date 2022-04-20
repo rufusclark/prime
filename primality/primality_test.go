@@ -13,7 +13,7 @@ func TestFuzzComparePrimality(t *testing.T) {
 	rand.Seed(time.Now().Unix())
 	for i := 0; i < 10; i++ {
 		n := rand.Intn(100000)
-		testname := fmt.Sprintf("github.com/rufusclark/prime/primality ComparePrimality TrialDivision(%d) == HybridCache(%d)", n, n)
+		testname := fmt.Sprintf("ComparePrimality TrialDivision(%d) == HybridCache(%d)", n, n)
 
 		t.Run(testname, func(t *testing.T) {
 			got1 := TrialDivision(n)

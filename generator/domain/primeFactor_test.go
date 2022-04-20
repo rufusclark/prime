@@ -34,7 +34,7 @@ func TestPrimeFactor(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/domain/PrimeFactor(%d)", test.end)
+		testname := fmt.Sprintf("PrimeFactor(%d)", test.end)
 
 		t.Run(testname, func(t *testing.T) {
 			got := PrimeFactor(test.end)

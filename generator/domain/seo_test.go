@@ -34,7 +34,7 @@ func TestSeo(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/generator/domain/Seo(%d)", test.end)
+		testname := fmt.Sprintf("Seo(%d)", test.end)
 
 		t.Run(testname, func(t *testing.T) {
 			got := PrimeFactor(test.end)
