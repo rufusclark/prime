@@ -52,7 +52,7 @@ func TestHybridCache(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/primality/HydridCache(%d)", test.n)
+		testname := fmt.Sprintf("HydridCache(%d)", test.n)
 
 		t.Run(testname, func(t *testing.T) {
 			got := HybridCache(test.n)

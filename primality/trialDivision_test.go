@@ -45,7 +45,7 @@ func TestTrialDivision(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		testname := fmt.Sprintf("github.com/rufusclark/prime/primality/TrialDivision(%d)", test.n)
+		testname := fmt.Sprintf("TrialDivision(%d)", test.n)
 
 		t.Run(testname, func(t *testing.T) {
 			got := TrialDivision(test.n)
