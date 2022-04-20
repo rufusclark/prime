@@ -76,7 +76,8 @@ func readBytes(filename string) (bytes []byte, err error) {
 	return bytes, err
 }
 
-// marshal is a function that converts a slice of primes into a slice of differences of primes
+// marshal is a function that converts a slice of primes into a slice of differences of primes.
+// ints must be in increasing order - this is assumed as no checks are made for this
 func marshal(primes []int) (mPrimes []int) {
 
 	mPrimes = make([]int, len(primes))

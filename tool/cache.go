@@ -11,7 +11,10 @@ import (
 // These functions are not performance optomized and are deliberately broken down into discrete function
 
 // WritePrimes is a function that writes primes to a file
-// returns
+//	params
+// 		filename = filename relative to current execution
+// 		primes = list of primes in increasing order - this is assumed and not checked, ignoring this will cause unexpected behabiour and errors
+//  returns
 // 		n = number of bytes written,
 // 		err = error or nil
 func WritePrimes(filename string, primes []int) (n int, err error) {

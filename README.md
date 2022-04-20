@@ -5,10 +5,11 @@ Simple module for testing generating prime numbers
 ## File Structure
 
 ``` console
-├── generator (Generate a list of primes)
-│   ├── count (Generate a given number of primes from 0)
-│   └── domain (Generate all primes in a given domain)
-├── primality (Check if an integer is prime)
+├── generator   (Generate a list of primes)
+│   ├── count   (Generate a given number of primes from 0)
+│   └── domain  (Generate all primes in a given domain)
+├── primality   (Check if an integer is prime)
+├── tool        (Tools for reading, writing and managing lists of prime numbers)
 ```
 
 ## Primality > HybridCache Optimisation
